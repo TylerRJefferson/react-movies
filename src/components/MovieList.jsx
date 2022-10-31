@@ -1,17 +1,11 @@
 import movies from "../movies";
+import MovieComponent from "./MovieComponent"
 
 function MovieList() {
   return (
     <section id="movie-list-container">
-      {movies.map(movie => (
-        <div className="movie-card" key={movie.id}>
-          <img className= "movie-poster" 
-            src={movie.posterURL} 
-            alt={movie.title}/>
-          <h3 className="movie-title">
-            {movie.title}
-          </h3>
-        </div>
+      {movies.map(movieInfo => (
+        <MovieComponent movieProp={movieInfo}/>
       ))}
     </section>
   )
